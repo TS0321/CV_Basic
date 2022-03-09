@@ -6,5 +6,5 @@ project(${the_target})
 
 include(cmake/cmakeinc.cmake)
 
-ADD_SUBDIRECTORY(CharucoCalibration)
+ADD_SUBDIRECTORY(Capture)
 
