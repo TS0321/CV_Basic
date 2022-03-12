@@ -1,6 +1,9 @@
+#pragma once
+
 #include <iostream>
 #include <filesystem>
 #include <string>
+#include <vector>
 
 class Util
 {
@@ -8,5 +11,5 @@ public:
 	Util() {};
 	~Util() {};
 public:
-	static void loadDirFiles(const std::string dir_path);
+	static std::vector<std::string> loadDirFiles(const std::string dir_path);
 };
