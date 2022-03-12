@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <opencv2/opencv.hpp>
-
+#include <Eigen/Dense>
 class CameraParam
 {
 public:
@@ -15,6 +15,9 @@ public:
 	void loadParam(const std::string file_path);
 	cv::Mat getCvCamParam() const;
 	cv::Mat getCvDistCoeffs() const;
+	Eigen::Vector2d denormalize(const Eigen::Vector2d& pt) const;
+	Eigen::Vector2d normalize(const Eigen::Vector2d& pt) const;
+
 
 private:
 	int width;

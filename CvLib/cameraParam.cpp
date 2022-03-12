@@ -42,4 +42,20 @@ cv::Mat CameraParam::getCvDistCoeffs() const
 	return distCoeffs;
 }
 
+Eigen::Vector2d CameraParam::denormalize(const Eigen::Vector2d& xy) const 
+{
+	Eigen::Vector2d uv;
+	uv.x() = fx * xy.x() + cx;
+	uv.y() = fy * xy.y() + cy;
+	
+	return uv;
+}
 
+Eigen::Vector2d CameraParam::normalize(const Eigen::Vector2d& uv) const
+{
+	Eigen::Vector2d xy;
+	xy.x() = (uv.x() - cx) / fx;
+	xy.y() = (uv.y() - cy) / fy;
+
+	return xy;
+}
