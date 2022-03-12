@@ -8,4 +8,4 @@ include(cmake/cmakeinc.cmake)
 
 ADD_SUBDIRECTORY(Capture)
 ADD_SUBDIRECTORY(kadai1-1)
-
+ADD_SUBDIRECTORY(kadai1-2)

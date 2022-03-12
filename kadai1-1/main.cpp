@@ -8,21 +8,6 @@
 #include "../CvLib/util.h"
 //#define DEBUG
 
-//calibrationボードのdotの三次元位置を算出する関数
-std::vector<cv::Point3f> create_board3dPts(int width, int height, double margin)
-{
-	std::vector<cv::Point3f> calib3dPts;
-	for (int y = 0; y < height; y++)
-	{
-		for (int x = 0; x < width; x++)
-		{
-			cv::Point3f pt = cv::Point3f(x * margin, y * margin, 0);
-			calib3dPts.push_back(pt);
-		}
-	}
-	return calib3dPts;
-}
-
 int main(void)
 {
 	//calib画像データの読み込み
@@ -44,7 +29,7 @@ int main(void)
 	int width = 12;		//dotのx軸方向の数
 	int height = 8;		//dotのy軸方向の数
 	double margin = 20.0;	//dotとdotの間の距離
-	board_3dPts = create_board3dPts(width, height, margin);
+	board_3dPts = Util::create_board3dPts(width, height, margin);
 #ifdef DEBUG
 	for (int y = 0; y < height; y++)
 	{
