@@ -35,3 +35,10 @@ if(YAML_CPP_FOUND)
     include_directories(${YAML_CPP_INCLUDE_DIRS})
     link_directories(${YAML_CPP_LIBRARIES})
 endif(YAML_CPP_FOUND)
+
+## realsense
+find_package(realsense2 REQUIRED)
+if(REALSENSE2_FONUD)
+    include_directories(${REALSENSE2_INCLUDE_DIRS})
+    link_directories(${REALSENSE2_LIBRARIES})
+endif(REALSENSE2_FONUD)

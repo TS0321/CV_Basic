@@ -104,7 +104,7 @@
 	 pose.setIdentity();
 	 pose.prerotate(R);
 	 pose.pretranslate(t);
-	 
+
 	 optimizePose(obj_pts, img_pts, cparam, pose, 100, 0.0001);
  }
 
